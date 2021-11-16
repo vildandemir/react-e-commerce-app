@@ -1,0 +1,17 @@
+.nav {
+  padding: 13px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: solit 1px #e2e8f0;
+  line-height: 2px;
+  align-items: center;
+}
+
+.nav .left {
+  display: flex;
+}
+
+.nav .left .menu {
+  display: flex;
+  margin-left: 40px;
+}
