@@ -16,8 +16,11 @@ function Navbar() {
         </ul>
       </div>
       <div className="right">
-        <Button colorScheme="blue" size="sm">
-          LOGIN
+        <Button colorScheme="pink" color="black" size="md">
+          <Link to="/favorites">Favorites</Link>
+        </Button>
+        <Button colorScheme="yellow" color="black" size="md">
+          <Link to="/cart">Cart</Link>
         </Button>
       </div>
     </nav>
