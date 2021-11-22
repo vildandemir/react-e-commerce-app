@@ -1,29 +1,27 @@
-import { useEffect, useState } from "react";
-import axios from "axios";
-import { Box, Image, Badge, Grid } from "@chakra-ui/react";
+import { Box, Image, Badge, Grid, Button } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
+import { StarIcon } from "@chakra-ui/icons";
 
-function Card() {
-  const [data, setData] = useState([]);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const response = await axios.get(
-        "https://6196420eaf46280017e7df35.mockapi.io/api/clothes"
-      );
-      setData(response.data);
-    };
-    fetchData();
-  }, []);
+function Card({ item }) {
   return (
     <div>
-      <Box>
-        <Grid templateColumns="repeat(5, 1fr)" gap={6}>
-          {data.map((repo) => (
-            <Box key={repo.id} w="100%" h="200" bg="blue.500">
-              <Box>Name : {repo.name}</Box>
-            </Box>
-          ))}
-        </Grid>
+      <Box key={item.id} w="100%" h="400" bg="blue.200">
+        <Link to={`/product/${item.id}`}>
+          <Image src={item.image}></Image>
+          <Box>{item.name}</Box>
+          <Box>{item.color}</Box>
+          <Box>{item.price}</Box>
+          <Box display="flex" mt="2" alignItems="center">
+            {Array(5)
+              .fill("")
+              .map((_, i) => (
+                <StarIcon
+                  key={i}
+                  color={i < item.rating ? "teal.500" : "gray.300"}
+                />
+              ))}
+          </Box>
+        </Link>
       </Box>
     </div>
   );
