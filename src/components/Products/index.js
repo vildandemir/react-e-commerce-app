@@ -5,8 +5,6 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { Box, Image, Badge, Grid, Button } from "@chakra-ui/react";
 
-// import { Link } from "react-router-dom";
-
 function Products() {
   const [data, setData] = useState([]);
 
@@ -32,5 +30,4 @@ function Products() {
     </div>
   );
 }
-
 export default Products;
