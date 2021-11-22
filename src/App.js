@@ -5,15 +5,16 @@ import Navbar from "./components/Navbar/index";
 import Products from "./components/Products";
 import Cart from "./components/Cart/index";
 import Favorites from "./components/Favorites";
+import ProductDetails from "./components/Product Details";
 
 function App() {
   return (
     <Router>
       <div>
         <Navbar />
-        <Products />
         <Switch>
           <Route path="/" exact component={Products} />
+          <Route path="/:product_id" component={ProductDetails} />
           <Route path="/cart" component={Cart} />
           <Route path="/favorites" component={Favorites} />
         </Switch>
