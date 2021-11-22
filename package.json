@@ -5,6 +5,7 @@
   "dependencies": {
     "@chakra-ui/icons": "^1.1.1",
     "@chakra-ui/react": "^1.7.1",
+    "@emotion/core": "^11.0.0",
     "@emotion/react": "^11.6.0",
     "@emotion/styled": "^11.6.0",
     "@testing-library/jest-dom": "^5.15.0",
@@ -14,6 +15,7 @@
     "framer-motion": "^4.1.17",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-icons": "^4.3.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
     "web-vitals": "^1.1.2"
