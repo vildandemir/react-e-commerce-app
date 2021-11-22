@@ -14,7 +14,7 @@ function App() {
         <Navbar />
         <Switch>
           <Route path="/" exact component={Products} />
-          <Route path="/:product_id" component={ProductDetails} />
+          <Route path="/product/:product_id" component={ProductDetails} />
           <Route path="/cart" component={Cart} />
           <Route path="/favorites" component={Favorites} />
         </Switch>
