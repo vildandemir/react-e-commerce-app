@@ -2,9 +2,13 @@
   padding: 13px;
   display: flex;
   justify-content: space-between;
-  border-bottom: solit 1px #e2e8f0;
+  border-bottom: solit 1px #abb9cc;
   line-height: 2px;
   align-items: center;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  background-color: #ffffff;
 }
 
 .nav .left {
