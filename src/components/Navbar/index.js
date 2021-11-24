@@ -15,8 +15,10 @@ import {
   MenuDivider,
 } from "@chakra-ui/react";
 import { MdShoppingCart, MdFavorite } from "react-icons/md";
+import { useCart } from "../../context/CartContext";
 
 function Navbar() {
+  const { items } = useCart();
   return (
     <nav className={styles.nav}>
       <div className={styles.left}>
@@ -55,6 +57,7 @@ function Navbar() {
         <Button colorScheme="yellow" color="black" size="md" ml={5}>
           <Link to="/cart">
             <MdShoppingCart w={8} h={8} ml={3} color="black" />
+            {items.length > 0 && <div>{items.length}</div>}
           </Link>
         </Button>
       </div>
