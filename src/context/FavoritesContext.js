@@ -13,10 +13,16 @@ const FavoritesProvider = ({ children }) => {
     setProducts(filtered);
   };
 
+  const removeItemFromFavorites = (item_id) => {
+    const filtered = products.filter((product) => product.id !== item_id);
+    setProducts(filtered);
+  };
+
   const values = {
     products,
     setProducts,
     addToFavorites,
+    removeItemFromFavorites,
   };
 
   return (
