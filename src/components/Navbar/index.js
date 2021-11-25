@@ -1,21 +1,15 @@
 import styles from "./styles.module.css";
 import { Link } from "react-router-dom";
-import { ChevronDownIcon, StarIcon, ArrowRightIcon } from "@chakra-ui/icons";
-import { Button, ButtonGroup } from "@chakra-ui/react";
-import {
-  Menu,
-  MenuButton,
-  MenuList,
-  MenuItem,
-  MenuItemOption,
-  MenuGroup,
-  MenuOptionGroup,
-  MenuIcon,
-  MenuCommand,
-  MenuDivider,
-} from "@chakra-ui/react";
+import { ChevronDownIcon } from "@chakra-ui/icons";
+import { Button } from "@chakra-ui/react";
+import { Menu, MenuButton, MenuList, MenuItem } from "@chakra-ui/react";
 import { MdShoppingCart, MdFavorite } from "react-icons/md";
 import { useCart } from "../../context/CartContext";
+import Jackets from "./Categories/Jackets";
+import Pants from "./Categories/Pants";
+import Bags from "./Categories/Bags";
+import Dresses from "./Categories/Dresses";
+import Sunglasses from "./Categories/Sunglasses";
 
 function Navbar() {
   const { items } = useCart();
@@ -38,11 +32,31 @@ function Navbar() {
               Categories
             </MenuButton>
             <MenuList>
-              <MenuItem>Jackets</MenuItem>
-              <MenuItem>Pants</MenuItem>
-              <MenuItem>T-Shirts</MenuItem>
-              <MenuItem>Bags</MenuItem>
-              <MenuItem>Eye Glasses</MenuItem>
+              <MenuItem>
+                <Link to="/jackets">
+                  <Jackets />
+                </Link>
+              </MenuItem>
+              <MenuItem>
+                <Link to="/pants">
+                  <Pants />
+                </Link>
+              </MenuItem>
+              <MenuItem>
+                <Link to="/dresses">
+                  <Dresses />
+                </Link>
+              </MenuItem>
+              <MenuItem>
+                <Link to="/bags">
+                  <Bags />
+                </Link>
+              </MenuItem>
+              <MenuItem>
+                <Link to="/sunglasses">
+                  <Sunglasses />
+                </Link>
+              </MenuItem>
             </MenuList>
           </Menu>
         </li>
