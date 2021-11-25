@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import { useCart } from "../../context/CartContext";
+import { useFavorites } from "../../context/FavoritesContext";
 
 function ProductDetails() {
   const [data, setData] = useState([]);
@@ -11,6 +12,8 @@ function ProductDetails() {
   const { product_id } = useParams();
 
   const { addToCart, items } = useCart();
+
+  const { addToFavorites, products } = useFavorites();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -23,6 +26,10 @@ function ProductDetails() {
   }, []);
 
   const findCardItem = items.find((item) => item.id === product_id);
+
+  const findFavoriteItem = products.find(
+    (product) => product.id === product_id
+  );
 
   return (
     <div>
@@ -41,8 +48,15 @@ function ProductDetails() {
         >
           {findCardItem ? `Remove From Cart` : `Add To Cart`}
         </Button>
-        <Button colorScheme="pink" color="black" size="sm" ml={5}>
-          Add to Favorites
+
+        <Button
+          onClick={() => addToFavorites(data, findFavoriteItem)}
+          colorScheme={findFavoriteItem ? `red` : `pink`}
+          color="black"
+          size="sm"
+          ml={5}
+        >
+          {findFavoriteItem ? `Remove From Favorites` : `Add To Favorites`}
         </Button>
         <Button colorScheme="pink" color="black" size="sm" ml={5}>
           Back to Homepage
