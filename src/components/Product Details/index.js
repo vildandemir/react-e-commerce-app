@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { Box, Image, Badge, Grid, Button } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import axios from "axios";
@@ -59,7 +60,7 @@ function ProductDetails() {
           {findFavoriteItem ? `Remove From Favorites` : `Add To Favorites`}
         </Button>
         <Button colorScheme="pink" color="black" size="sm" ml={5}>
-          Back to Homepage
+          <Link to="/"> Back to Homepage </Link>
         </Button>
       </Box>
     </div>
