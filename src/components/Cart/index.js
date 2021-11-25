@@ -1,6 +1,5 @@
 import React from "react";
 import { useCart } from "../../context/CartContext";
-import Card from "../Card/index";
 import { Alert, AlertIcon } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import { Image, Button, Text } from "@chakra-ui/react";
