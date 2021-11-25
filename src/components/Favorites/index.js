@@ -1,12 +1,7 @@
 import React from "react";
 import { useFavorites } from "../../context/FavoritesContext";
 import Card from "../Card";
-import {
-  Alert,
-  AlertIcon,
-  AlertTitle,
-  AlertDescription,
-} from "@chakra-ui/react";
+import { Alert, AlertIcon } from "@chakra-ui/react";
 
 function Favorites() {
   const { products } = useFavorites();
