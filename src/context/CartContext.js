@@ -13,10 +13,16 @@ const CartProvider = ({ children }) => {
     setItems(filtered);
   };
 
+  const removeItemFromCart = (item_id) => {
+    const filtered = items.filter((item) => item.id !== item_id);
+    setItems(filtered);
+  };
+
   const values = {
     items,
     setItems,
     addToCart,
+    removeItemFromCart,
   };
 
   return <CartContext.Provider value={values}>{children}</CartContext.Provider>;
