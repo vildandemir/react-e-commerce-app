@@ -7,7 +7,7 @@ import { MdShoppingCart, MdFavorite } from "react-icons/md";
 import { useCart } from "../../context/CartContext";
 import Jackets from "./Categories/Jackets";
 import Pants from "./Categories/Pants";
-import Bags from "./Categories/Bags";
+import DressShirts from "./Categories/DressShirts";
 import Dresses from "./Categories/Dresses";
 import Sunglasses from "./Categories/Sunglasses";
 
@@ -32,30 +32,20 @@ function Navbar() {
               Categories
             </MenuButton>
             <MenuList>
-              <MenuItem>
-                <Link to="/jackets">
-                  <Jackets />
-                </Link>
+              <MenuItem onClick={() => <Jackets />}>
+                <Link to="/jackets">Jackets</Link>
               </MenuItem>
-              <MenuItem>
-                <Link to="/pants">
-                  <Pants />
-                </Link>
+              <MenuItem onClick={() => <Pants />}>
+                <Link to="/pants">Pants</Link>
               </MenuItem>
-              <MenuItem>
-                <Link to="/dresses">
-                  <Dresses />
-                </Link>
+              <MenuItem onClick={() => <Dresses />}>
+                <Link to="/dresses">Dresses</Link>
               </MenuItem>
-              <MenuItem>
-                <Link to="/bags">
-                  <Bags />
-                </Link>
+              <MenuItem onClick={() => <DressShirts />}>
+                <Link to="/dressshirts">Dress Shirts</Link>
               </MenuItem>
-              <MenuItem>
-                <Link to="/sunglasses">
-                  <Sunglasses />
-                </Link>
+              <MenuItem onClick={() => <Sunglasses />}>
+                <Link to="/sunglasses">Sunglasses</Link>
               </MenuItem>
             </MenuList>
           </Menu>
