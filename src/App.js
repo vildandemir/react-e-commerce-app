@@ -10,7 +10,7 @@ import { CartProvider } from "./context/CartContext";
 import { FavoritesProvider } from "./context/FavoritesContext";
 import Jackets from "./components/Navbar/Categories/Jackets";
 import Pants from "./components/Navbar/Categories/Pants";
-import Bags from "./components/Navbar/Categories/Bags";
+import DressShirts from "./components/Navbar/Categories/DressShirts";
 import Dresses from "./components/Navbar/Categories/Dresses";
 import Sunglasses from "./components/Navbar/Categories/Sunglasses";
 
@@ -29,7 +29,7 @@ function App() {
               <Route path="/jackets" component={Jackets} />
               <Route path="/pants" component={Pants} />
               <Route path="/dresses" component={Dresses} />
-              <Route path="/bags" component={Bags} />
+              <Route path="/dressshirts" component={DressShirts} />
               <Route path="/sunglasses" component={Sunglasses} />
             </Switch>
           </div>
