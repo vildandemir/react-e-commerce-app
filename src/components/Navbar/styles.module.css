@@ -2,12 +2,13 @@
   padding: 13px;
   display: flex;
   justify-content: space-between;
-  border-bottom: solit 1px #abb9cc;
+  border-bottom: solid 1px #abb9cc;
   line-height: 2px;
   align-items: center;
   position: -webkit-sticky;
   position: sticky;
   top: 0;
+  z-index: 2;
   background-color: #ffffff;
 }
 
