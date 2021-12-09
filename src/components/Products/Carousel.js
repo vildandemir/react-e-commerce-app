@@ -1,18 +1,34 @@
 import React, { useRef, useEffect } from "react";
 import { Box } from "@chakra-ui/react";
 import { keyframes } from "@emotion/react";
+import styles from "./styles.module.css";
 
 const fadeIn = keyframes`
-0% { opacity:0.6; }
+0% { opacity:0.5; }
 100% { opacity:1; }
 `;
 
 const arr = [
-  { show: "block", url: "https://source.unsplash.com/WLUHO9A_xik/1440x960" },
-  { show: "none", url: "https://source.unsplash.com/DNE9iZ1Kqzk/1440x960" },
-  { show: "none", url: "https://source.unsplash.com/6ccJQ5qPFvY/1440x960" },
-  { show: "none", url: "https://source.unsplash.com/qTLyiHW1nIc/1440x960" },
-  { show: "none", url: "https://source.unsplash.com/fxX__3GRtsg/1440x960" },
+  {
+    show: "block",
+    url: "https://shoppolly.com/public/uploads/all/LgbZLRIyhehkYbqu5nwRi9MVqpZPQPmkhxSSs4B8.jpg",
+  },
+  {
+    show: "none",
+    url: "https://www.hofstatt.info/wp-content/uploads/2016/09/shop-banner.jpg",
+  },
+  {
+    show: "none",
+    url: "https://st3.depositphotos.com/1001169/31933/v/1600/depositphotos_319339972-stock-illustration-christmas-banner-background-xmas-design.jpg",
+  },
+  {
+    show: "none",
+    url: "https://www.firstclasswatches.co.uk/blog/wp-content/uploads/2017/11/black-friday-banner.jpg",
+  },
+  {
+    show: "none",
+    url: "https://images.squarespace-cdn.com/content/v1/532313ece4b08487acaec7a2/1463066669231-HF9IJNDUTLMUK4RCBPCY/unnamed+%281%29.jpg?format=1000w",
+  },
 ];
 
 function Carousel() {
@@ -49,7 +65,25 @@ function Carousel() {
   }, delay);
   return (
     <>
-      <div style={{ marginTop: "3px" }}>
+      <div className={styles.section}>
+        <div className={styles.marqueeStart}>
+          <div class={styles.marqueeContainer}>
+            <div class={styles.marquee}>
+              <span class={styles.marqueeEnd}>
+                MINT DATE: TBA ~ MINT PRICE: TBA ~ TOTAL SUPPLY: 8888 ~ PRE SALE
+                DATE: TBA
+              </span>
+            </div>
+            <div class={styles.marquee}>
+              <span class={styles.marqueeEnd}>
+                MINT DATE: TBA ~ MINT PRICE: TBA ~ TOTAL SUPPLY: 8888 ~ PRE SALE
+                DATE: TBA
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style={{ marginTop: "0px" }}>
         {arr.map((item, key) => {
           return (
             <Box
