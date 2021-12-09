@@ -1,0 +1,85 @@
+.section {
+  position: relative;
+  text-align: center;
+  margin: 85 px auto auto;
+  z-index: 1;
+  display: block;
+}
+
+.marqueeStart {
+  display: flex;
+  font-family: ScoreBoard;
+  text-transform: uppercase;
+  height: 60 px;
+}
+
+.marqueeContainer {
+  overflow-x: hidden !important;
+  display: flex !important;
+  flex-direction: row !important;
+  position: relative;
+  width: 100%;
+  --pause-on-hover: paused;
+  --pause-on-click: running;
+}
+
+.pink {
+  background: rgb(238, 159, 241);
+  box-shadow: rgb(0 0 0) 3px 0px 7px;
+  font-size: 21px;
+  color: rgb(0, 0, 0);
+  padding: 5 px 25 px;
+  text-align: left;
+  line-height: 26px;
+}
+
+p {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+
+.marquee {
+  flex: 0 0 auto;
+  min-width: 100%;
+  z-index: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  animation: scroll var(--duration) linear var(--delay) var(--iteration-count);
+  animation-play-state: var(--play);
+  animation-delay: var(--delay);
+  animation-direction: var(--direction);
+
+  --play: running;
+  --direction: normal;
+  --duration: 9.06927s;
+  --delay: 0s;
+  --iteration-count: infinite;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.marqueeEnd {
+  position: relative;
+  background: rgb(28, 21, 65);
+  font-size: 27px;
+  color: rgb(14, 219, 255);
+  width: 100%;
+  overflow: hidden;
+  padding: 15 px;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-appearance: none;
+}
