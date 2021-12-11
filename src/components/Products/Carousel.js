@@ -1,7 +1,9 @@
 import React, { useRef, useEffect } from "react";
-import { Box } from "@chakra-ui/react";
+import { Box, LinkBox, LinkOverlay } from "@chakra-ui/react";
 import { keyframes } from "@emotion/react";
 import styles from "./styles.module.css";
+import Pants from "../Navbar/Categories/Pants";
+import { Link } from "react-router-dom";
 
 const fadeIn = keyframes`
 0% { opacity:0.5; }
@@ -12,22 +14,27 @@ const arr = [
   {
     show: "block",
     url: "https://shoppolly.com/public/uploads/all/LgbZLRIyhehkYbqu5nwRi9MVqpZPQPmkhxSSs4B8.jpg",
+    get: "/pants",
   },
   {
     show: "none",
     url: "https://www.hofstatt.info/wp-content/uploads/2016/09/shop-banner.jpg",
+    get: "/dresses",
   },
   {
     show: "none",
     url: "https://st3.depositphotos.com/1001169/31933/v/1600/depositphotos_319339972-stock-illustration-christmas-banner-background-xmas-design.jpg",
+    get: "/dressshirts",
   },
   {
     show: "none",
     url: "https://www.firstclasswatches.co.uk/blog/wp-content/uploads/2017/11/black-friday-banner.jpg",
+    get: "/glasses",
   },
   {
     show: "none",
     url: "https://images.squarespace-cdn.com/content/v1/532313ece4b08487acaec7a2/1463066669231-HF9IJNDUTLMUK4RCBPCY/unnamed+%281%29.jpg?format=1000w",
+    get: "/jackets",
   },
 ];
 
@@ -63,6 +70,7 @@ function Carousel() {
     });
     arr[value].show = "block";
   }, delay);
+
   return (
     <>
       <div className={styles.section}>
@@ -70,14 +78,12 @@ function Carousel() {
           <div class={styles.marqueeContainer}>
             <div class={styles.marquee}>
               <span class={styles.marqueeEnd}>
-                MINT DATE: TBA ~ MINT PRICE: TBA ~ TOTAL SUPPLY: 8888 ~ PRE SALE
-                DATE: TBA
+                Only Till Midnight ! UP TO %90 OF ALL SALE ! No code needed !
               </span>
             </div>
             <div class={styles.marquee}>
               <span class={styles.marqueeEnd}>
-                MINT DATE: TBA ~ MINT PRICE: TBA ~ TOTAL SUPPLY: 8888 ~ PRE SALE
-                DATE: TBA
+                Only Till Midnight ! UP TO %90 OF ALL SALE ! No code needed !
               </span>
             </div>
           </div>
@@ -86,39 +92,41 @@ function Carousel() {
       <div style={{ marginTop: "0px" }}>
         {arr.map((item, key) => {
           return (
-            <Box
-              backgroundColor="#222"
-              backgroundImage={`url(${item.url})`}
-              backgroundPosition="center"
-              backgroundSize="cover"
-              backgroundRepeat="no-repeat"
-              width="100vw"
-              height="80vh"
-              animation={`${fadeIn} ease 2s`}
-              display={item.show}
-              key={key}
-            >
-              <div
-                style={{
-                  width: "100%",
-                  height: "100%",
-                  backdropFilter: "contrast(.8)",
-                }}
+            <Link to={item.get}>
+              <Box
+                backgroundColor="#222"
+                backgroundImage={`url(${item.url})`}
+                backgroundPosition="center"
+                backgroundSize="cover"
+                backgroundRepeat="no-repeat"
+                width="100vw"
+                height="80vh"
+                animation={`${fadeIn} ease 2s`}
+                display={item.show}
+                key={key}
               >
                 <div
                   style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    height: "inherit",
-                    justifyContent: "center",
-                    alignItems: "center",
+                    width: "100%",
+                    height: "100%",
+                    backdropFilter: "contrast(.8)",
                   }}
                 >
-                  <div style={{ color: "#fff" }}>hola</div>
-                  <div style={{ color: "#fff" }}>hola</div>
+                  <div
+                    style={{
+                      display: "flex",
+                      flexDirection: "column",
+                      height: "inherit",
+                      justifyContent: "center",
+                      alignItems: "center",
+                    }}
+                  >
+                    <div style={{ color: "#fff" }}>Ürünlere git</div>
+                    <div style={{ color: "#fff" }}>hola</div>
+                  </div>
                 </div>
-              </div>
-            </Box>
+              </Box>
+            </Link>
           );
         })}
       </div>
