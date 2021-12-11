@@ -71,9 +71,9 @@ p {
 
 .marqueeEnd {
   position: relative;
-  background: rgb(28, 21, 65);
+  background: rgb(245, 207, 157);
   font-size: 27px;
-  color: rgb(14, 219, 255);
+  color: rgb(141, 36, 36);
   width: 100%;
   overflow: hidden;
   padding: 15 px;

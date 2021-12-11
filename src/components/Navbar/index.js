@@ -52,13 +52,13 @@ function Navbar() {
         </li>
       </ul>
       <div className="right">
-        <Button colorScheme="pink" color="black" size="md">
+        <Button color="black" size="md">
           <Link to="/favorites">
             <MdFavorite w={8} h={8} ml={3} />
           </Link>
         </Button>
 
-        <Button colorScheme="yellow" color="black" size="md" ml={5}>
+        <Button color="black" size="md" ml={5}>
           <Link to="/cart">
             <MdShoppingCart w={8} h={8} ml={3} color="black" />
             {items.length > 0 && <div>{items.length}</div>}
