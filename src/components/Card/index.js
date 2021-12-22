@@ -6,7 +6,7 @@ import { BsTruck } from "react-icons/bs";
 function Card({ item }) {
   return (
     <div>
-      <Box key={item.id} w="100%" h="400" bg="blue.200">
+      <Box mt={10} key={item.id} w="100%" h="400" bg="blue.200">
         <Link to={`/product/${item.id}`}>
           <Image src={item.image} boxSize="200px"></Image>
           <Box>{item.name}</Box>

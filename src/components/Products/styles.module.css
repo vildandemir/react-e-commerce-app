@@ -1,3 +1,27 @@
+.turn {
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn {
+  margin-left: 35px;
+  margin-top: -200px;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: rgba(85, 85, 85, 0);
+  color: rgb(129, 127, 127);
+  font-size: 20px;
+  padding: -10px;
+  border: none;
+  font-weight: 900;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+}
+.btn:hover {
+  background-color: rgba(248, 242, 242, 0.144);
+}
+
 .section {
   position: relative;
   text-align: center;
@@ -55,7 +79,7 @@ p {
 
   --play: running;
   --direction: normal;
-  --duration: 9.06927s;
+  --duration: 13.06927s;
   --delay: 0s;
   --iteration-count: infinite;
 }
@@ -71,9 +95,9 @@ p {
 
 .marqueeEnd {
   position: relative;
-  background: rgb(245, 207, 157);
+  background: rgb(41, 41, 41);
   font-size: 27px;
-  color: rgb(141, 36, 36);
+  color: rgb(182, 174, 174);
   width: 100%;
   overflow: hidden;
   padding: 15 px;
@@ -82,4 +106,11 @@ p {
 * {
   box-sizing: border-box;
   -webkit-appearance: none;
+}
+
+.circle {
+  margin-left: 130px;
+}
+.circle:hover {
+  box-shadow: rgb(0 0 0) 3px 0px 10px;
 }
