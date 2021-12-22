@@ -13,6 +13,8 @@ import Pants from "./components/Navbar/Categories/Pants";
 import DressShirts from "./components/Navbar/Categories/DressShirts";
 import Dresses from "./components/Navbar/Categories/Dresses";
 import Sunglasses from "./components/Navbar/Categories/Sunglasses";
+import Footer from "./components/Footer";
+import Auth from "./components/Auth";
 
 function App() {
   return (
@@ -31,7 +33,9 @@ function App() {
               <Route path="/dresses" component={Dresses} />
               <Route path="/dressshirts" component={DressShirts} />
               <Route path="/sunglasses" component={Sunglasses} />
+              <Route path="/auth" component={Auth} />
             </Switch>
+            <Footer />
           </div>
         </Router>
       </FavoritesProvider>
