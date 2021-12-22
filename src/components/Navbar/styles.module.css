@@ -2,14 +2,15 @@
   padding: 13px;
   display: flex;
   justify-content: space-between;
-  border-bottom: solid 1px #abb9cc;
+
   line-height: 2px;
   align-items: center;
   position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 2;
-  background-color: #ffffff;
+  background-color: #f8f8f8;
+  color: #464646;
 }
 
 .nav .left {
@@ -19,4 +20,19 @@
 .nav .left .menu {
   display: flex;
   margin-left: 40px;
+}
+
+.logo {
+  font-size: 20px;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 700;
+  color: rgb(100, 2, 2);
+}
+
+.right {
+  font-size: 15px;
+}
+
+.righttwo {
+  font-size: 18px;
 }

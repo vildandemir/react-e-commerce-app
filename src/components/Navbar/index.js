@@ -3,21 +3,22 @@ import { Link } from "react-router-dom";
 import { ChevronDownIcon } from "@chakra-ui/icons";
 import { Button } from "@chakra-ui/react";
 import { Menu, MenuButton, MenuList, MenuItem } from "@chakra-ui/react";
-import { MdShoppingCart, MdFavorite } from "react-icons/md";
+import { MdShoppingCart, MdFavorite, MdPerson } from "react-icons/md";
 import { useCart } from "../../context/CartContext";
 import Jackets from "./Categories/Jackets";
 import Pants from "./Categories/Pants";
 import DressShirts from "./Categories/DressShirts";
 import Dresses from "./Categories/Dresses";
 import Sunglasses from "./Categories/Sunglasses";
+import Auth from "../Auth";
 
 function Navbar() {
   const { items } = useCart();
   return (
     <nav className={styles.nav}>
       <div className={styles.left}>
-        <div className="logo">
-          <Link to="/">E-Commerce</Link>
+        <div class={styles.logo}>
+          <Link to="/">DORADO</Link>
         </div>
         <ul>
           <li className={styles.menu}>
@@ -54,14 +55,20 @@ function Navbar() {
       <div className="right">
         <Button color="black" size="md">
           <Link to="/favorites">
-            <MdFavorite w={8} h={8} ml={3} />
+            <MdFavorite class={styles.right} />
           </Link>
         </Button>
 
         <Button color="black" size="md" ml={5}>
           <Link to="/cart">
-            <MdShoppingCart w={8} h={8} ml={3} color="black" />
+            <MdShoppingCart color="black" class={styles.right} />
             {items.length > 0 && <div>{items.length}</div>}
+          </Link>
+        </Button>
+
+        <Button color="black" size="md" ml={4}>
+          <Link to="/auth">
+            <MdPerson class={styles.righttwo} />
           </Link>
         </Button>
       </div>
