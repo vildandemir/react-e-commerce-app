@@ -10,7 +10,6 @@ import Pants from "./Categories/Pants";
 import DressShirts from "./Categories/DressShirts";
 import Dresses from "./Categories/Dresses";
 import Sunglasses from "./Categories/Sunglasses";
-import Auth from "../Auth";
 
 function Navbar() {
   const { items } = useCart();

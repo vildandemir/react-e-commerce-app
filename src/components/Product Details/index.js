@@ -37,11 +37,13 @@ function ProductDetails() {
       Product Details
       <Box>
         {product_id}
-        <Image src={data.image}></Image>
+        <Image align={"center"} boxSize="250px" src={data.image}></Image>
       </Box>
       <Box>
         <Button
-          onClick={() => addToCart(data, findCardItem)}
+          onClick={() => {
+            addToCart(data, findCardItem);
+          }}
           colorScheme={findCardItem ? `red` : `yellow`}
           color="black"
           size="sm"
