@@ -11,76 +11,191 @@ import {
   Button,
   Heading,
   Text,
+  Grid,
   useColorModeValue,
-  Link,
+  chakra,
+  useToast,
 } from "@chakra-ui/react";
-import { useState } from "react";
+import { Link } from "react-router-dom";
 import { ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
+import { useState, useEffect } from "react";
+import { useAuth } from "../../context/AuthContext";
 
-export default function Login() {
-  const [showLoginPassword, setShowLoginPassword] = useState(false);
+export default function Auth() {
+  const [showPassword, setShowPassword] = useState(false);
+  const {
+    currentUser,
+    register,
+    login,
+    logout,
+    authListener,
+    email,
+    setEmail,
+    password,
+    setPassword,
+    hasAccount,
+    setHasAccount,
+    emailError,
+    setEmailError,
+    passwordError,
+    setPasswordError,
+    signIn,
+    setSignIn,
+    isSubmitting,
+    setIsSubmitting,
+  } = useAuth();
+
+  useEffect(() => {
+    authListener();
+    console.log(currentUser);
+  }, []);
 
   return (
-    <Flex
-      minH={"100vh"}
-      align={"center"}
-      justify={"center"}
-      bg={useColorModeValue("gray.50", "gray.800")}
-    >
-      <Stack spacing={8} mx={"auto"} minW={"md"} py={12} px={6}>
-        <Stack align={"center"}>
-          <Heading fontSize={"4xl"} textAlign={"center"}>
-            Sign in
-          </Heading>
-          <Text fontSize={"lg"} color={"gray.600"}>
-            ✌️
-          </Text>
-        </Stack>
-        <Box
-          rounded={"lg"}
-          bg={useColorModeValue("white", "gray.700")}
-          boxShadow={"lg"}
-          p={8}
-        >
-          <Stack spacing={4}>
-            <FormControl id="email" isRequired>
-              <FormLabel>Email address</FormLabel>
-              <Input type="email" />
-            </FormControl>
-            <FormControl id="password" isRequired>
-              <FormLabel>Password</FormLabel>
-              <InputGroup>
-                <Input type={showLoginPassword ? "text" : "password"} />
-                <InputRightElement h={"full"}>
-                  <Button
-                    variant={"ghost"}
-                    onClick={() =>
-                      setShowLoginPassword(
-                        (showLoginPassword) => !showLoginPassword
-                      )
-                    }
-                  >
-                    {showLoginPassword ? <ViewIcon /> : <ViewOffIcon />}
-                  </Button>
-                </InputRightElement>
-              </InputGroup>
-            </FormControl>
-            <Stack spacing={10} pt={2}>
-              <Button
-                loadingText="Submitting"
-                size="lg"
-                bg={"yellow.400"}
-                color={"white"}
-                _hover={{
-                  bg: "yellow.500",
-                }}
-              >
-                Login
-              </Button>
+    <div>
+      <Flex
+        minH={"100vh"}
+        align={"center"}
+        justify={"center"}
+        bg={useColorModeValue("gray.50", "gray.800")}
+      >
+        <Stack spacing={4} mx={"auto"} minW={"md"} py={12} px={6}>
+          {hasAccount && (
+            <Stack align={"center"}>
+              <Heading fontSize={"4xl"} textAlign={"center"}>
+                Sign in
+              </Heading>
+              )
+              <Text fontSize={"lg"} color={"gray.600"}>
+                to do all your shopping ✌️
+              </Text>
             </Stack>
-          </Stack>
-        </Box>
-      </Stack>
-    </Flex>
+          )}
+          {!hasAccount && (
+            <Stack align={"center"}>
+              <Heading fontSize={"4xl"} textAlign={"center"}>
+                Sign up
+              </Heading>
+              )
+              <Text fontSize={"lg"} color={"gray.600"}>
+                to do all your shopping ✌️
+              </Text>
+            </Stack>
+          )}
+
+          <Box rounded={"lg"} bg={"white"} boxShadow={"lg"} p={8}>
+            <Stack spacing={4}>
+              <FormControl id="email" isRequired>
+                <FormLabel>Email address</FormLabel>
+                <Input
+                  value={email}
+                  type="email"
+                  onChange={(e) => setEmail(e.target.value)}
+                  name="email"
+                  autoComplete="email"
+                  required
+                />
+                <Text>{emailError}</Text>
+              </FormControl>
+              <FormControl id="password" isRequired>
+                <FormLabel>Password</FormLabel>
+                <InputGroup>
+                  <Input
+                    type={showPassword ? "text" : "password"}
+                    onChange={(e) => setPassword(e.target.value)}
+                    value={password}
+                    name="password"
+                    autoComplete="password"
+                    required
+                  />
+                  <InputRightElement h={"full"}>
+                    <Button
+                      variant={"ghost"}
+                      onClick={() =>
+                        setShowPassword((showPassword) => !showPassword)
+                      }
+                    >
+                      {showPassword ? <ViewIcon /> : <ViewOffIcon />}
+                    </Button>
+                  </InputRightElement>
+                  <Text>{passwordError}</Text>
+                </InputGroup>
+              </FormControl>
+
+              <Stack spacing={10} pt={2}>
+                {hasAccount ? (
+                  <Stack>
+                    <Button
+                      loadingText="Submitting"
+                      size="lg"
+                      bg={"yellow.400"}
+                      color={"white"}
+                      _hover={{
+                        bg: "yellow.500",
+                      }}
+                      isLoading={isSubmitting}
+                      type="submit"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        login(email, password);
+                      }}
+                    >
+                      Sign in
+                    </Button>
+                    <Stack pt={6}>
+                      <Text align={"center"}>
+                        Don't have an account?{" "}
+                        <Grid
+                          color={"blue.400"}
+                          to="/login"
+                          onClick={() => {
+                            setHasAccount(!hasAccount);
+                          }}
+                        >
+                          Sign up
+                        </Grid>
+                      </Text>
+                    </Stack>
+                  </Stack>
+                ) : (
+                  <Stack>
+                    <Button
+                      loadingText="Submitting"
+                      size="lg"
+                      bg={"yellow.400"}
+                      color={"white"}
+                      _hover={{
+                        bg: "yellow.500",
+                      }}
+                      isLoading={isSubmitting}
+                      type="submit"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        register(email, password);
+                      }}
+                    >
+                      Sign up
+                    </Button>
+                    <Stack pt={6}>
+                      <Text align={"center"}>
+                        Already a user?{" "}
+                        <Grid
+                          color={"blue.400"}
+                          to="/login"
+                          onClick={() => {
+                            setHasAccount(!hasAccount);
+                          }}
+                        >
+                          Login
+                        </Grid>
+                      </Text>
+                    </Stack>
+                  </Stack>
+                )}
+              </Stack>
+            </Stack>
+          </Box>
+        </Stack>
+      </Flex>
+    </div>
   );
 }
