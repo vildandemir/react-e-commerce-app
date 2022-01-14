@@ -1,13 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Box, Image, Badge, Grid, Button } from "@chakra-ui/react";
+import { Box, Image, Button } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import { useCart } from "../../context/CartContext";
 import { useFavorites } from "../../context/FavoritesContext";
+import { useAuth } from "../../context/AuthContext";
 
 function ProductDetails() {
+  const { currentUser, authListener } = useAuth();
+
   const [data, setData] = useState([]);
 
   const { product_id } = useParams();
@@ -22,6 +25,7 @@ function ProductDetails() {
         `https://6196420eaf46280017e7df35.mockapi.io/api/clothes/${product_id}`
       );
       setData(response.data);
+      authListener();
     };
     fetchData();
   }, []);
@@ -42,7 +46,11 @@ function ProductDetails() {
       <Box>
         <Button
           onClick={() => {
-            addToCart(data, findCardItem);
+            if (!currentUser) {
+              alert("You must be a member to add to cart!");
+            } else {
+              addToCart(data, findCardItem);
+            }
           }}
           colorScheme={findCardItem ? `red` : `yellow`}
           color="black"
@@ -53,7 +61,13 @@ function ProductDetails() {
         </Button>
 
         <Button
-          onClick={() => addToFavorites(data, findFavoriteItem)}
+          onClick={() => {
+            if (!currentUser) {
+              alert("You must be a member to add to favorites!");
+            } else {
+              addToFavorites(data, findFavoriteItem);
+            }
+          }}
           colorScheme={findFavoriteItem ? `red` : `pink`}
           color="black"
           size="sm"
