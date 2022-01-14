@@ -1,14 +1,16 @@
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 
+require("dotenv").config();
+
 const firebaseConfig = {
-  apiKey: "AIzaSyAAC4UQvzYEm1o4JJ4Vrkkphcd-ZGEZUws",
-  authDomain: "e-commerce-app-7f7b1.firebaseapp.com",
-  projectId: "e-commerce-app-7f7b1",
-  storageBucket: "e-commerce-app-7f7b1.appspot.com",
-  messagingSenderId: "408707687837",
-  appId: "1:408707687837:web:e4c39689aa17e5ad837b74",
-  measurementId: "G-FFB72C8JJL",
+  apiKey: process.env.REACT_APP_API_KEY,
+  authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_APP_ID,
+  measurementId: process.env.REACT_APP_MEASUREMENT_ID,
 };
 
 const app = initializeApp(firebaseConfig);
