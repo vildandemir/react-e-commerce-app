@@ -16,31 +16,36 @@ import Sunglasses from "./components/Navbar/Categories/Sunglasses";
 import Footer from "./components/Footer";
 import Auth from "./components/Auth";
 import Login from "./components/Auth/Login";
+import Profile from "./components/Profile";
+import AuthContextProvider from "./context/AuthContext";
 
 function App() {
   return (
     <CartProvider>
-      <FavoritesProvider>
-        <Router>
-          <div>
-            <Navbar />
-            <Switch>
-              <Route path="/" exact component={Products} />
-              <Route path="/product/:product_id" component={ProductDetails} />
-              <Route path="/cart" component={Cart} />
-              <Route path="/favorites" component={Favorites} />
-              <Route path="/jackets" component={Jackets} />
-              <Route path="/pants" component={Pants} />
-              <Route path="/dresses" component={Dresses} />
-              <Route path="/dressshirts" component={DressShirts} />
-              <Route path="/sunglasses" component={Sunglasses} />
-              <Route path="/auth" component={Auth} />
-              <Route path="/login" component={Login} />
-            </Switch>
-            <Footer />
-          </div>
-        </Router>
-      </FavoritesProvider>
+      <AuthContextProvider>
+        <FavoritesProvider>
+          <Router>
+            <div>
+              <Navbar />
+              <Switch>
+                <Route path="/" exact component={Products} />
+                <Route path="/product/:product_id" component={ProductDetails} />
+                <Route path="/cart" component={Cart} />
+                <Route path="/favorites" component={Favorites} />
+                <Route path="/jackets" component={Jackets} />
+                <Route path="/pants" component={Pants} />
+                <Route path="/dresses" component={Dresses} />
+                <Route path="/dressshirts" component={DressShirts} />
+                <Route path="/sunglasses" component={Sunglasses} />
+                <Route path="/auth" component={Auth} />
+                <Route path="/login" component={Login} />
+                <Route path="/profile" component={Profile} />
+              </Switch>
+              <Footer />
+            </div>
+          </Router>
+        </FavoritesProvider>
+      </AuthContextProvider>
     </CartProvider>
   );
 }
