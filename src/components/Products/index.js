@@ -1,12 +1,13 @@
 import React from "react";
 import Card from "../Card";
-import Carousel from "./Carousel";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { Box, Image, Badge, Grid, Button } from "@chakra-ui/react";
+import { Box, Grid } from "@chakra-ui/react";
+import Footer from "../Footer";
 
 function Products() {
   const [data, setData] = useState([]);
+  const [dataIsLoaded, setDataIsLoaded] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -14,12 +15,12 @@ function Products() {
         "https://6196420eaf46280017e7df35.mockapi.io/api/clothes"
       );
       setData(response.data);
+      setDataIsLoaded(true);
     };
     fetchData();
   }, []);
   return (
     <div>
-      <Carousel />
       <Box>
         <Grid templateColumns="repeat(5, 1fr)" gap={6}>
           {data.map((item, key) => (
@@ -27,6 +28,7 @@ function Products() {
           ))}
         </Grid>
       </Box>
+      {dataIsLoaded === true && <Footer />}
     </div>
   );
 }

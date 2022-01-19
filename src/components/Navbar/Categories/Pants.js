@@ -3,9 +3,11 @@ import Card from "../../Card";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { Box, Grid } from "@chakra-ui/react";
+import Footer from "../../Footer";
 
 function Pants() {
   const [data, setData] = useState([]);
+  const [dataIsLoaded, setDataIsLoaded] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -13,6 +15,7 @@ function Pants() {
         "https://6196420eaf46280017e7df35.mockapi.io/api/clothes"
       );
       setData(response.data);
+      setDataIsLoaded(true);
     };
     fetchData();
   }, []);
@@ -28,6 +31,7 @@ function Pants() {
             ))}
         </Grid>
       </Box>
+      {dataIsLoaded === true && <Footer />}
     </div>
   );
 }
