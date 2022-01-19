@@ -13,11 +13,11 @@ import Pants from "./components/Navbar/Categories/Pants";
 import DressShirts from "./components/Navbar/Categories/DressShirts";
 import Dresses from "./components/Navbar/Categories/Dresses";
 import Sunglasses from "./components/Navbar/Categories/Sunglasses";
-import Footer from "./components/Footer";
 import Auth from "./components/Auth";
 import Login from "./components/Auth/Login";
 import Profile from "./components/Profile";
 import AuthContextProvider from "./context/AuthContext";
+import HomePage from "./components/HomePage";
 
 function App() {
   return (
@@ -28,7 +28,8 @@ function App() {
             <div>
               <Navbar />
               <Switch>
-                <Route path="/" exact component={Products} />
+                <Route path="/" exact component={HomePage} />
+                <Route path="/products" component={Products} />
                 <Route path="/product/:product_id" component={ProductDetails} />
                 <Route path="/cart" component={Cart} />
                 <Route path="/favorites" component={Favorites} />
@@ -41,7 +42,6 @@ function App() {
                 <Route path="/login" component={Login} />
                 <Route path="/profile" component={Profile} />
               </Switch>
-              <Footer />
             </div>
           </Router>
         </FavoritesProvider>
