@@ -4,10 +4,8 @@ import {
   FormControl,
   FormLabel,
   Heading,
-  Input,
   Stack,
   useColorModeValue,
-  HStack,
   Avatar,
   AvatarBadge,
   IconButton,
@@ -17,24 +15,19 @@ import {
 import { Link } from "react-router-dom";
 import { SmallCloseIcon } from "@chakra-ui/icons";
 import { useAuth } from "../../context/AuthContext";
-import { useEffect } from "react";
+import Footer from "../Footer";
 
 export default function Profile() {
-  const { currentUser, logout, profile, authListener } = useAuth();
-
-  // useEffect(() => {
-  //   authListener();
-  //   console.log(currentUser);
-  // }, []);
+  const { currentUser, logout } = useAuth();
 
   return (
-    <Flex
-      minH={"100vh"}
-      align={"center"}
-      justify={"center"}
-      bg={useColorModeValue("gray.50", "gray.800")}
-    >
-      {
+    <div>
+      <Flex
+        minH={"100vh"}
+        align={"center"}
+        justify={"center"}
+        bg={useColorModeValue("gray.50", "gray.800")}
+      >
         <Stack
           spacing={4}
           w={"full"}
@@ -43,15 +36,15 @@ export default function Profile() {
           boxShadow={"lg"}
           p={6}
           my={12}
+          textAlign={"center"}
         >
           <Heading lineHeight={1.1} fontSize={{ base: "2xl", sm: "3xl" }}>
             User Profile
           </Heading>
           <FormControl id="userName">
-            <FormLabel>User Icon</FormLabel>
-            <Stack direction={["column", "row"]} spacing={6}>
+            <Stack ml={"35%"} direction={["column", "row"]} spacing={6}>
               <Center>
-                <Avatar size="xl" src="https://bit.ly/sage-adebayo">
+                <Avatar size="xl">
                   <AvatarBadge
                     as={IconButton}
                     size="sm"
@@ -67,8 +60,10 @@ export default function Profile() {
           </FormControl>
 
           <FormControl id="email">
-            <FormLabel>Email address</FormLabel>
-            <Text>{JSON.stringify(currentUser)}</Text>
+            <FormLabel fontWeight={"700"} textAlign={"center"}>
+              Email address :
+            </FormLabel>
+            <Text>{JSON.stringify(currentUser.email)}</Text>
           </FormControl>
 
           <Stack spacing={6} direction={["column", "row"]}>
@@ -87,7 +82,8 @@ export default function Profile() {
             </Button>
           </Stack>
         </Stack>
-      }
-    </Flex>
+      </Flex>
+      <Footer />
+    </div>
   );
 }

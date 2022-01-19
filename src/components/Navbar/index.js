@@ -16,12 +16,12 @@ function Navbar() {
   return (
     <nav className={styles.nav}>
       <div className={styles.left}>
-        <div class={styles.logo}>
+        <div className={styles.logo}>
           <Link to="/">DORADO</Link>
         </div>
         <ul>
           <li className={styles.menu}>
-            <Link to="/">Products</Link>
+            <Link to="/products">Products</Link>
           </li>
         </ul>
       </div>
@@ -54,20 +54,20 @@ function Navbar() {
       <div className="right">
         <Button color="black" size="md">
           <Link to="/favorites">
-            <MdFavorite class={styles.right} />
+            <MdFavorite className={styles.right} />
           </Link>
         </Button>
 
         <Button color="black" size="md" ml={5}>
           <Link to="/cart">
-            <MdShoppingCart color="black" class={styles.right} />
+            <MdShoppingCart color="black" className={styles.right} />
             {items.length > 0 && <div>{items.length}</div>}
           </Link>
         </Button>
 
         <Button color="black" size="md" ml={4}>
           <Link to="/auth">
-            <MdPerson class={styles.righttwo} />
+            <MdPerson className={styles.righttwo} />
           </Link>
         </Button>
       </div>

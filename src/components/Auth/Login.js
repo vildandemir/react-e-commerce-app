@@ -5,7 +5,6 @@ import {
   FormLabel,
   Input,
   InputGroup,
-  HStack,
   InputRightElement,
   Stack,
   Button,
@@ -13,13 +12,12 @@ import {
   Text,
   Grid,
   useColorModeValue,
-  chakra,
-  useToast,
 } from "@chakra-ui/react";
-import { Link } from "react-router-dom";
+
 import { ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
 import { useState, useEffect } from "react";
 import { useAuth } from "../../context/AuthContext";
+import Footer from "../Footer";
 
 export default function Auth() {
   const [showPassword, setShowPassword] = useState(false);
@@ -27,7 +25,6 @@ export default function Auth() {
     currentUser,
     register,
     login,
-    logout,
     authListener,
     email,
     setEmail,
@@ -36,13 +33,8 @@ export default function Auth() {
     hasAccount,
     setHasAccount,
     emailError,
-    setEmailError,
     passwordError,
-    setPasswordError,
-    signIn,
-    setSignIn,
     isSubmitting,
-    setIsSubmitting,
   } = useAuth();
 
   useEffect(() => {
@@ -196,6 +188,7 @@ export default function Auth() {
           </Box>
         </Stack>
       </Flex>
+      <Footer />
     </div>
   );
 }
