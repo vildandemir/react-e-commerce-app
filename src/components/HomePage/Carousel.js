@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from "react";
-import { Box, Button, Circle, HStack } from "@chakra-ui/react";
+import { Box, Button } from "@chakra-ui/react";
 import { keyframes } from "@emotion/react";
 import styles from "./styles.module.css";
 import { Link } from "react-router-dom";
@@ -74,15 +74,15 @@ function Carousel() {
     <>
       <div className={styles.section}>
         <div className={styles.marqueeStart}>
-          <div class={styles.marqueeContainer}>
-            <div class={styles.marquee}>
-              <span class={styles.marqueeEnd}>
+          <div className={styles.marqueeContainer}>
+            <div className={styles.marquee}>
+              <span className={styles.marqueeEnd}>
                 Only Till Midnight ! UP TO %90 OF ALL SALE ! Free Worldwide
                 Shipping
               </span>
             </div>
-            <div class={styles.marquee}>
-              <span class={styles.marqueeEnd}>
+            <div className={styles.marquee}>
+              <span className={styles.marqueeEnd}>
                 Only Till Midnight ! UP TO %90 OF ALL SALE ! Free Worldwide
                 Shipping
               </span>
@@ -128,7 +128,7 @@ function Carousel() {
         })}
       </div>
 
-      <div class={styles.turn}>
+      <div className={styles.turn}>
         <Button
           class={styles.btn}
           size="sm"
@@ -140,108 +140,6 @@ function Carousel() {
           {`>>>`}
         </Button>
       </div>
-      <HStack mt={10} mb={2} backgroundColor="#fffff">
-        <Circle
-          className={styles.circle}
-          size="40px"
-          // backgroundImage={`https://images.squarespace-cdn.com/content/v1/532313ece4b08487acaec7a2/1463066669231-HF9IJNDUTLMUK4RCBPCY/unnamed+%281%29.jpg?format=1000w`}
-          backgroundColor={"red"}
-          backgroundSize="cover"
-          color="white"
-          width="7vw"
-          height="14vh"
-        >
-          %50 Sale
-        </Circle>
-        <Circle
-          ml={100}
-          className={styles.circle}
-          size="40px"
-          backgroundImage={`https://images.squarespace-cdn.com/content/v1/532313ece4b08487acaec7a2/1463066669231-HF9IJNDUTLMUK4RCBPCY/unnamed+%281%29.jpg?format=1000w`}
-          backgroundSize="cover"
-          color="white"
-          width="7vw"
-          height="14vh"
-        ></Circle>
-        <Circle
-          className={styles.circle}
-          mt={10}
-          size="40px"
-          backgroundImage={`https://images.squarespace-cdn.com/content/v1/532313ece4b08487acaec7a2/1463066669231-HF9IJNDUTLMUK4RCBPCY/unnamed+%281%29.jpg?format=1000w`}
-          backgroundSize="cover"
-          color="white"
-          width="7vw"
-          height="14vh"
-        ></Circle>
-        <Circle
-          className={styles.circle}
-          mt={10}
-          size="40px"
-          backgroundImage={`https://images.squarespace-cdn.com/content/v1/532313ece4b08487acaec7a2/1463066669231-HF9IJNDUTLMUK4RCBPCY/unnamed+%281%29.jpg?format=1000w`}
-          backgroundSize="cover"
-          color="white"
-          width="7vw"
-          height="14vh"
-        ></Circle>
-        <Circle
-          className={styles.circle}
-          mt={10}
-          size="40px"
-          backgroundImage={`https://images.squarespace-cdn.com/content/v1/532313ece4b08487acaec7a2/1463066669231-HF9IJNDUTLMUK4RCBPCY/unnamed+%281%29.jpg?format=1000w`}
-          backgroundSize="cover"
-          color="white"
-          width="7vw"
-          height="14vh"
-        ></Circle>
-        <Circle
-          className={styles.circle}
-          mt={10}
-          size="40px"
-          backgroundImage={`https://images.squarespace-cdn.com/content/v1/532313ece4b08487acaec7a2/1463066669231-HF9IJNDUTLMUK4RCBPCY/unnamed+%281%29.jpg?format=1000w`}
-          backgroundSize="cover"
-          color="white"
-          width="7vw"
-          height="14vh"
-        ></Circle>
-        <Circle
-          className={styles.circle}
-          mt={10}
-          size="40px"
-          backgroundImage={`https://images.squarespace-cdn.com/content/v1/532313ece4b08487acaec7a2/1463066669231-HF9IJNDUTLMUK4RCBPCY/unnamed+%281%29.jpg?format=1000w`}
-          backgroundSize="cover"
-          color="white"
-          width="7vw"
-          height="14vh"
-        ></Circle>
-        <Circle
-          className={styles.circle}
-          mt={10}
-          size="40px"
-          backgroundImage={`https://images.squarespace-cdn.com/content/v1/532313ece4b08487acaec7a2/1463066669231-HF9IJNDUTLMUK4RCBPCY/unnamed+%281%29.jpg?format=1000w`}
-          backgroundSize="cover"
-          color="white"
-          width="7vw"
-          height="14vh"
-        ></Circle>
-        <Circle
-          className={styles.circle}
-          size="40px"
-          backgroundImage={`https://images.squarespace-cdn.com/content/v1/532313ece4b08487acaec7a2/1463066669231-HF9IJNDUTLMUK4RCBPCY/unnamed+%281%29.jpg?format=1000w`}
-          backgroundSize="cover"
-          color="white"
-          width="7vw"
-          height="14vh"
-        ></Circle>
-        <Circle
-          className={styles.circle}
-          size="40px"
-          backgroundImage={`https://images.squarespace-cdn.com/content/v1/532313ece4b08487acaec7a2/1463066669231-HF9IJNDUTLMUK4RCBPCY/unnamed+%281%29.jpg?format=1000w`}
-          backgroundSize="cover"
-          color="white"
-          width="7vw"
-          height="14vh"
-        ></Circle>
-      </HStack>
     </>
   );
 }

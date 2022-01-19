@@ -8,7 +8,7 @@
   margin-top: -200px;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
-  background-color: rgba(85, 85, 85, 0);
+  background-color: rgba(82, 80, 80, 0);
   color: rgb(129, 127, 127);
   font-size: 20px;
   padding: -10px;
@@ -26,7 +26,7 @@
   position: relative;
   text-align: center;
   margin: 85 px auto auto;
-  z-index: 1;
+  z-index: 2;
   display: block;
 }
 
