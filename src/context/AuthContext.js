@@ -40,6 +40,7 @@ export default function AuthContextProvider({ children }) {
 
   const [signIn, setSignIn] = useState(false);
 
+  //sign up
   function register(email, password) {
     clearErrors();
     if (!email || !password) {
@@ -71,6 +72,7 @@ export default function AuthContextProvider({ children }) {
       });
   }
 
+  //sign in
   function login(email, password) {
     clearErrors();
     if (!email || !password) {
@@ -103,13 +105,14 @@ export default function AuthContextProvider({ children }) {
       });
   }
 
+  //logout
   function logout() {
     signOut(auth).finally(() => {
       setIsSubmitting(false);
     });
   }
 
-  //get current user when the component did mount
+  //get current user when user state changes
   const authListener = () => {
     onAuthStateChanged(auth, (user) => {
       if (user) {

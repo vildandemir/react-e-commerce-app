@@ -6,6 +6,7 @@ import Profile from "../Profile";
 export default function Auth() {
   const { currentUser, authListener } = useAuth();
 
+  //get current user when the component did mount
   useEffect(() => {
     authListener();
     console.log(currentUser);

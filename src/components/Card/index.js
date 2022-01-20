@@ -22,7 +22,7 @@ function Card({ item }) {
           <Box mt={"10px"} fontWeight={"600"}>
             {item.name}
           </Box>
-          {/* <Box>{item.color}</Box> */}
+
           <Box mt={"10px"}>{item.price} $ </Box>
           <Box ml={"12%"} display="flex" mt="2" alignItems="center">
             {Array(5)

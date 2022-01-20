@@ -10,22 +10,21 @@ import {
   Button,
   Heading,
   Text,
-  Grid,
+  Link,
   useColorModeValue,
 } from "@chakra-ui/react";
-
 import { ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useAuth } from "../../context/AuthContext";
 import Footer from "../Footer";
 
 export default function Auth() {
   const [showPassword, setShowPassword] = useState(false);
+
+  //get necessary states from your own hook
   const {
-    currentUser,
     register,
     login,
-    authListener,
     email,
     setEmail,
     password,
@@ -36,11 +35,6 @@ export default function Auth() {
     passwordError,
     isSubmitting,
   } = useAuth();
-
-  useEffect(() => {
-    authListener();
-    console.log(currentUser);
-  }, []);
 
   return (
     <div>
@@ -114,6 +108,7 @@ export default function Auth() {
               </FormControl>
 
               <Stack spacing={10} pt={2}>
+                {/* has account button toggle */}
                 {hasAccount ? (
                   <Stack>
                     <Button
@@ -136,15 +131,15 @@ export default function Auth() {
                     <Stack pt={6}>
                       <Text align={"center"}>
                         Don't have an account?{" "}
-                        <Grid
-                          color={"blue.400"}
+                        <Link
+                          color={"blue.500"}
                           to="/login"
                           onClick={() => {
                             setHasAccount(!hasAccount);
                           }}
                         >
                           Sign up
-                        </Grid>
+                        </Link>
                       </Text>
                     </Stack>
                   </Stack>
@@ -170,15 +165,15 @@ export default function Auth() {
                     <Stack pt={6}>
                       <Text align={"center"}>
                         Already a user?{" "}
-                        <Grid
-                          color={"blue.400"}
+                        <Link
+                          color={"blue.500"}
                           to="/login"
                           onClick={() => {
                             setHasAccount(!hasAccount);
                           }}
                         >
                           Login
-                        </Grid>
+                        </Link>
                       </Text>
                     </Stack>
                   </Stack>

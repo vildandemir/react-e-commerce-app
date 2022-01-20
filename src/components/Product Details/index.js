@@ -24,6 +24,7 @@ import {
   ListItem,
 } from "@chakra-ui/react";
 import { MdLocalShipping } from "react-icons/md";
+import { StarIcon } from "@chakra-ui/icons";
 
 function ProductDetails() {
   const { currentUser, authListener } = useAuth();
@@ -65,7 +66,6 @@ function ProductDetails() {
               rounded={"md"}
               alt={"product image"}
               src={data.image}
-              // fit={"cover"}
               align={"center"}
               w={"400px"}
               h={"400px"}
@@ -122,8 +122,8 @@ function ProductDetails() {
 
                   <SimpleGrid columns={{ base: 2 }}>
                     <List spacing={2}>
-                      <ListItem>Chronograph</ListItem>
-                      <ListItem>Tachymeter</ListItem>
+                      <ListItem>A1 Fabric</ListItem>
+                      <ListItem>Full Mold</ListItem>
                     </List>
                   </SimpleGrid>
                 </Box>
@@ -140,15 +140,30 @@ function ProductDetails() {
                   <List spacing={2}>
                     <ListItem>
                       <Text as={"span"} fontWeight={"bold"}>
-                        Between lugs:
+                        Materials:
                       </Text>{" "}
-                      20 mm
+                      Polyester and Silk
+                    </ListItem>
+                    <ListItem>
+                      <Box display="flex" mt="2" alignItems="center">
+                        <Text as={"span"} fontWeight={"bold"} mr={"10px"}>
+                          Reviews Rating:
+                        </Text>{" "}
+                        {Array(5)
+                          .fill("")
+                          .map((_, i) => (
+                            <StarIcon
+                              key={i}
+                              color={i < data.rating ? "gray.600" : "gray.300"}
+                            />
+                          ))}
+                      </Box>
                     </ListItem>
                     <ListItem>
                       <Text as={"span"} fontWeight={"bold"}>
-                        Bracelet:
+                        Color:
                       </Text>{" "}
-                      leather strap
+                      {data.color}
                     </ListItem>
                   </List>
                 </Box>

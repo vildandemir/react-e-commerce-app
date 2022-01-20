@@ -23,6 +23,8 @@ function Favorites() {
     authListener();
     console.log(currentUser);
   }, []);
+
+  //get necessery states from your own favorites hook
   const { products, removeItemFromFavorites } = useFavorites();
   console.log(products);
 

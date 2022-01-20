@@ -9,11 +9,13 @@ const FavoritesProvider = ({ children }) => {
     if (!findFavoriteItem) {
       return setProducts([data, ...products]);
     }
+    //don't add the same product twice, if there are different products, list them
     const filtered = products.filter((item) => item.id !== findFavoriteItem.id);
     setProducts(filtered);
   };
 
   const removeItemFromFavorites = (item_id) => {
+    //list products other than you clicked
     const filtered = products.filter((product) => product.id !== item_id);
     setProducts(filtered);
   };

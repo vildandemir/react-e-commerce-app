@@ -2,7 +2,7 @@ import styles from "./styles.module.css";
 import { Link } from "react-router-dom";
 import { ChevronDownIcon } from "@chakra-ui/icons";
 import { Button } from "@chakra-ui/react";
-import { Menu, MenuButton, MenuList, MenuItem } from "@chakra-ui/react";
+import { Menu, MenuButton, MenuList, MenuItem, Text } from "@chakra-ui/react";
 import { MdShoppingCart, MdFavorite, MdPerson } from "react-icons/md";
 import { useCart } from "../../context/CartContext";
 import Jackets from "./Categories/Jackets";
@@ -17,16 +17,24 @@ function Navbar() {
     <nav className={styles.nav}>
       <div className={styles.left}>
         <div className={styles.logo}>
-          <Link to="/">DORADO</Link>
+          <Link to="/">
+            <Text ml={"10px"} fontWeight={700}>
+              BRANDWAY
+            </Text>{" "}
+          </Link>
         </div>
         <ul>
           <li className={styles.menu}>
-            <Link to="/products">Products</Link>
+            <Link to="/products">
+              <Text ml={"-10px"} fontWeight={"700"}>
+                Products
+              </Text>
+            </Link>
           </li>
         </ul>
       </div>
       <ul>
-        <li className="categories">
+        <li>
           <Menu>
             <MenuButton as={Button} rightIcon={<ChevronDownIcon />}>
               Categories
