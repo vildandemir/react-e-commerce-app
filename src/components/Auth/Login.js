@@ -93,6 +93,7 @@ export default function Auth() {
                     autoComplete="password"
                     required
                   />
+
                   <InputRightElement h={"full"}>
                     <Button
                       variant={"ghost"}
@@ -103,8 +104,8 @@ export default function Auth() {
                       {showPassword ? <ViewIcon /> : <ViewOffIcon />}
                     </Button>
                   </InputRightElement>
-                  <Text>{passwordError}</Text>
                 </InputGroup>
+                <Text>{passwordError}</Text>
               </FormControl>
 
               <Stack spacing={10} pt={2}>
