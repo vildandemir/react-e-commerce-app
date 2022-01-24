@@ -1,5 +1,8 @@
 ## Live 
-:zap: :zap: https://react-e-commerce-app-p96ns5b2w-vildandemir.vercel.app/
+🚀
+https://react-e-commerce-app-p96ns5b2w-vildandemir.vercel.app/
+
+
 
 ![Video_22-01-24_16-12-35](https://user-images.githubusercontent.com/81429147/150789024-3f73f740-0a08-4b8c-ae6c-c203c8b1019c.gif)
 
