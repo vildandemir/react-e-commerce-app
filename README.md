@@ -1,18 +1,19 @@
-## Live:
-https://react-e-commerce-app-p96ns5b2w-vildandemir.vercel.app/
-
+## Live 
+:zap: :zap: https://react-e-commerce-app-p96ns5b2w-vildandemir.vercel.app/
 
 ![Video_22-01-24_16-12-35](https://user-images.githubusercontent.com/81429147/150789024-3f73f740-0a08-4b8c-ae6c-c203c8b1019c.gif)
 
 
 🔎
+
 -This is an e-commerce project.
 
 -Visitors can examine the products according to their categories and add the products to the basket by becoming a member of the site.
 
 -Add to cart and add to favorites are limited for unregistered visitors.
 
-Technologies and Tools I use:
+
+### Technologies and Tools I use:
 
 :ballot_box_with_check: Front-End: React JS
 
